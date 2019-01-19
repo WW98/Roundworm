@@ -17,7 +17,7 @@ int main()
 		Value[Step] = ' '; //同一行两字段用空格分开 
 		for (int i = 0; i < 3; i++)
 			Step = strchr(Buffer + Step + 1, '|') - Buffer; // 再次位移3个'|' 得到第4个 '|' 的位置
-		Step += 1; //跳过'|' 
+		Step += 1; //跳过'|' 字符
 		End = strchr(Buffer + Step, '|') - Buffer;  //获得第5个'|' 位置
 		End = End - Step;  //获得第4到第五个'|'的长度
 		strncpy(Value+Point, Buffer+Step, End);//将Buffer+Step中的End个字符拷贝给Value+Point 
@@ -27,4 +27,5 @@ int main()
 	}
 	fclose(fs);
 	fclose(fa);
-	
+	return 0;
+}
